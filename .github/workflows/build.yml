@@ -214,8 +214,8 @@ jobs:
           echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config
           sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config 
           echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config
-          sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config
-          echo "CONFIG_FIRMWARE_INCLUDE_FTPD=y" >> .config
+          #sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config
+          #echo "CONFIG_FIRMWARE_INCLUDE_FTPD=y" >> .config
           sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
           echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
           #sed -i '/CONFIG_FIRMWARE_INCLUDE_DROPBEAR/d' .config
