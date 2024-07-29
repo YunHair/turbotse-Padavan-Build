@@ -207,10 +207,10 @@ jobs:
           echo "CONFIG_FIRMWARE_INCLUDE_VLMCSD=${{env.vlmcsd}}" >> .config
           echo "CONFIG_FIRMWARE_INCLUDE_TTYD=${{env.ttyd}}" >> .config
           echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=${{env.iperf3}}" >> .config
-          #sed -i '/CONFIG_FIRMWARE_zerotier/d' .config
-          echo "CONFIG_FIRMWARE_INCLUDE_zerotier=y" >> .config  
-          #sed -i '/CONFIG_FIRMWARE_INCLUDE_frpc/d' .config
-          echo "CONFIG_FIRMWARE_INCLUDE_frpc=y" >> .config  
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' .config 
+          echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config  
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config 
+          echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  
           # cpufreq
           if ${{ github.event.inputs.cpufreq == 'true' }}; then
             echo "CONFIG_FIRMWARE_INCLUDE_OC=y" >> .config
