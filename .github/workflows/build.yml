@@ -84,7 +84,7 @@ on:
       cpufreq:
         description: 'CPU Frequency (MHz)'
         type: boolean
-        default: false
+        default: true
       mt7621_oc:
         description: '1000Mhz=0x312 1100Mhz=0x362 1120Mhz=0x372 1200Mhz=0x3B2'
         type: choice
@@ -93,6 +93,7 @@ on:
         - '0x362'
         - '0x372'
         - '0x3B2'
+        default: '0x372'
       plugins:
         description: 'String JSON list of plug-ins'
         required: true
