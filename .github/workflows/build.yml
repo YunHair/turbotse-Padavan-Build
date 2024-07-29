@@ -211,9 +211,32 @@ jobs:
           sed -i '/CONFIG_FIRMWARE_INCLUDE_ZEROTIER/d' .config 
           echo "CONFIG_FIRMWARE_INCLUDE_ZEROTIER=y" >> .config  
           sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPC/d' .config 
-          echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config  
+          echo "CONFIG_FIRMWARE_INCLUDE_FRPC=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_FRPS/d' .config 
+          echo "CONFIG_FIRMWARE_INCLUDE_FRPS=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_FTPD/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_FTPD=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_SFTP/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_SFTP=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_DROPBEAR/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_DROPBEAR_FAST_CODE/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_DROPBEAR_FAST_CODE=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_OPENSSH/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_OPENSSH=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_HTOP/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_HTOP=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_IPERF3/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_IPERF3=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_DDNSTO/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_DDNSTO=y" >> .config
+          sed -i '/CONFIG_FIRMWARE_INCLUDE_WIREGUARD/d' .config
+          echo "CONFIG_FIRMWARE_INCLUDE_WIREGUARD=y" >> .config
+         
           # cpufreq
           if ${{ github.event.inputs.cpufreq == 'true' }}; then
+            sed -i '/CONFIG_FIRMWARE_INCLUDE_OC/d' .config
+            sed -i '/CONFIG_FIRMWARE_MT7621_OC/d' .config
             echo "CONFIG_FIRMWARE_INCLUDE_OC=y" >> .config
             echo "CONFIG_FIRMWARE_MT7621_OC=${{ inputs.mt7621_oc }}" >> .config
           fi
